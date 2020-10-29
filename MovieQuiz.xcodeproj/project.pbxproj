@@ -36,6 +36,7 @@
 		37835A8B2543C1A400FEE4F1 /* quote19.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37835A4A2543C17100FEE4F1 /* quote19.mp3 */; };
 		37835A8C2543C1A400FEE4F1 /* quote20.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 37835A562543C17200FEE4F1 /* quote20.mp3 */; };
 		37835A8E2543CCAD00FEE4F1 /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37835A8D2543CCAD00FEE4F1 /* GameOverViewController.swift */; };
+		37A38BC2254A42BD0098792F /* QuizManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A38BC1254A42BD0098792F /* QuizManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		37835A5C2543C17200FEE4F1 /* quote12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = quote12.mp3; sourceTree = "<group>"; };
 		37835A5D2543C17200FEE4F1 /* quote18.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = quote18.mp3; sourceTree = "<group>"; };
 		37835A8D2543CCAD00FEE4F1 /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		37A38BC1254A42BD0098792F /* QuizManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				37835A3E2543C0E700FEE4F1 /* LaunchScreen.storyboard */,
 				37835A412543C0E700FEE4F1 /* Info.plist */,
 				37835A8D2543CCAD00FEE4F1 /* GameOverViewController.swift */,
+				37A38BC1254A42BD0098792F /* QuizManager.swift */,
 			);
 			path = MovieQuiz;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A38BC2254A42BD0098792F /* QuizManager.swift in Sources */,
 				37835A382543C0E400FEE4F1 /* ViewController.swift in Sources */,
 				37835A362543C0E400FEE4F1 /* AppDelegate.swift in Sources */,
 				37835A8E2543CCAD00FEE4F1 /* GameOverViewController.swift in Sources */,

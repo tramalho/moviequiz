@@ -14,17 +14,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
     @IBOutlet var btOptions: [UIButton]!
     @IBOutlet weak var ivQuiz: UIImageView!
+    @IBOutlet weak var timer: UIImageView!
     
+    private var quizManager:QuizManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
-    @IBAction func checkAnswer(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        quizManager = QuizManager()
+        getNewQuiz()
     }
     
-    @IBAction func showSoundBar(_ sender: Any) {
+    private func getNewQuiz() {
+        let random = quizManager.generate()
+        for (index, element) in random.options.enumerated() {
+            btOptions[index].setTitle(element.name, for: .normal)
+        }
+    }
+    
+    @IBAction func checkAnswer(_ sender: UIButton) {
+        
+        if let answer = sender.title(for: .normal) {
+            quizManager.check(name: answer)
+            getNewQuiz()
+        }
+    }
+    
+    @IBAction func showSoundBar(_ sender: UIButton) {
+        sender.isHidden = !sender.isHidden
     }
     
     @IBAction func changeMusicStatus(_ sender: Any) {
