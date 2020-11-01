@@ -41,25 +41,23 @@
                                             <action selector="changeMusicTime:" destination="BYZ-38-t0r" eventType="valueChanged" id="XLM-Gh-v0s"/>
                                         </connections>
                                     </slider>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="im0-ka-rhv">
-                                        <rect key="frame" x="332" y="11.5" width="23" height="23"/>
-                                        <state key="normal" image="music"/>
-                                        <connections>
-                                            <action selector="showSoundBar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fod-EH-nwq"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="wYa-dp-oCs" firstAttribute="centerY" secondItem="T4K-o8-7fK" secondAttribute="centerY" id="4LY-lG-u0L"/>
                                     <constraint firstItem="RXg-km-kG7" firstAttribute="centerY" secondItem="T4K-o8-7fK" secondAttribute="centerY" id="8Zz-G1-OcA"/>
-                                    <constraint firstItem="im0-ka-rhv" firstAttribute="leading" secondItem="wYa-dp-oCs" secondAttribute="trailing" constant="10" id="BOC-ka-5gC"/>
-                                    <constraint firstItem="im0-ka-rhv" firstAttribute="centerY" secondItem="T4K-o8-7fK" secondAttribute="centerY" id="FA0-bo-zok"/>
                                     <constraint firstItem="RXg-km-kG7" firstAttribute="leading" secondItem="T4K-o8-7fK" secondAttribute="leading" constant="20" id="RCe-GO-ONL"/>
-                                    <constraint firstAttribute="trailing" secondItem="im0-ka-rhv" secondAttribute="trailing" constant="20" symbolic="YES" id="aZA-LR-jpL"/>
-                                    <constraint firstItem="wYa-dp-oCs" firstAttribute="leading" secondItem="RXg-km-kG7" secondAttribute="trailing" constant="10" id="ors-7L-9Eu"/>
+                                    <constraint firstAttribute="trailing" secondItem="wYa-dp-oCs" secondAttribute="trailing" constant="53" id="ju9-fc-OpH"/>
+                                    <constraint firstItem="wYa-dp-oCs" firstAttribute="centerY" secondItem="RXg-km-kG7" secondAttribute="centerY" id="pms-Qa-aV3"/>
+                                    <constraint firstItem="wYa-dp-oCs" firstAttribute="leading" secondItem="RXg-km-kG7" secondAttribute="trailing" constant="10" id="wq9-1b-A6V"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="im0-ka-rhv" userLabel="soundButton">
+                                <rect key="frame" x="332" y="632.5" width="23" height="23"/>
+                                <state key="normal" image="music"/>
+                                <connections>
+                                    <action selector="showSoundBar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fod-EH-nwq"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phg-1Z-Mc0">
                                 <rect key="frame" x="0.0" y="583" width="375" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.54509803921568623" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,13 +145,17 @@
                             <constraint firstItem="T4K-o8-7fK" firstAttribute="top" secondItem="phg-1Z-Mc0" secondAttribute="bottom" constant="8" id="mrv-fx-JyW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="phg-1Z-Mc0" secondAttribute="bottom" constant="54" id="qvI-Dk-z44"/>
                             <constraint firstItem="3Go-mY-wte" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rnM-Hk-Doo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="im0-ka-rhv" secondAttribute="trailing" constant="20" id="uee-jc-am8"/>
                             <constraint firstItem="aEw-ya-qBO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uxS-EQ-aju"/>
+                            <constraint firstItem="im0-ka-rhv" firstAttribute="centerY" secondItem="T4K-o8-7fK" secondAttribute="centerY" id="voM-hT-moZ"/>
                             <constraint firstItem="aEw-ya-qBO" firstAttribute="top" secondItem="3Go-mY-wte" secondAttribute="bottom" constant="20" id="zMM-9Y-BMg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="background" destination="jvg-tL-4gB" id="HEU-DN-XHl"/>
                         <outlet property="ivQuiz" destination="Wts-3y-guT" id="reB-eF-GJc"/>
+                        <outlet property="playButton" destination="RXg-km-kG7" id="RnP-ef-Dya"/>
                         <outlet property="slider" destination="wYa-dp-oCs" id="DjI-uU-BGu"/>
                         <outlet property="soundBar" destination="T4K-o8-7fK" id="03b-GA-Gnf"/>
                         <outlet property="timer" destination="JHD-jh-wmp" id="A37-AW-ybG"/>
