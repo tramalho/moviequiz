@@ -15,7 +15,7 @@ class QuizManager {
     public private(set) var quizes: [Quiz]  = []
     public private(set) var options: [QuizOption]  = []
     public private(set) var score: Int = 0
-    private var actualQuiz: Round? = nil
+    var actualQuiz: Round? = nil
 
     init() {
         decode(resourceName: "quizes") { (result: [Quiz]) in

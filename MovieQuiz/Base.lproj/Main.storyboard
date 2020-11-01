@@ -20,8 +20,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="jvg-tL-4gB">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JHD-jh-wmp" userLabel="timer">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JHD-jh-wmp" userLabel="timer">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T4K-o8-7fK">
@@ -106,6 +107,9 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ejr-fp-lxN" userLabel="movieSoundButton">
                                         <rect key="frame" x="0.0" y="91" width="375" height="267.5"/>
+                                        <connections>
+                                            <action selector="playQuiz:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h8c-V5-rbB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -129,9 +133,7 @@
                             <constraint firstItem="FHg-s4-h4E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AZW-F4-4fk"/>
                             <constraint firstItem="phg-1Z-Mc0" firstAttribute="top" secondItem="gQH-Fq-xUp" secondAttribute="bottom" constant="8" id="B7e-0K-WmA"/>
                             <constraint firstItem="phg-1Z-Mc0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ETe-Is-uHE"/>
-                            <constraint firstItem="JHD-jh-wmp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Fek-KQ-fCF"/>
                             <constraint firstItem="T4K-o8-7fK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="G65-Ra-lxM"/>
-                            <constraint firstItem="JHD-jh-wmp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LXF-2g-pPc"/>
                             <constraint firstItem="jvg-tL-4gB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MFC-YY-Kqg"/>
                             <constraint firstItem="3Go-mY-wte" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="OSo-TZ-CHD"/>
                             <constraint firstItem="aEw-ya-qBO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U4y-cz-GCe"/>
@@ -139,10 +141,8 @@
                             <constraint firstItem="FHg-s4-h4E" firstAttribute="top" secondItem="aEw-ya-qBO" secondAttribute="bottom" constant="8" id="Wsc-rk-fug"/>
                             <constraint firstItem="jvg-tL-4gB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zvx-gh-MUk"/>
                             <constraint firstItem="3Go-mY-wte" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bMg-U4-nGH"/>
-                            <constraint firstItem="JHD-jh-wmp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="beo-KY-Yn0"/>
                             <constraint firstItem="jvg-tL-4gB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cYy-T5-uMU"/>
                             <constraint firstItem="phg-1Z-Mc0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d4h-K8-zXX"/>
-                            <constraint firstItem="JHD-jh-wmp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kfE-IR-n7G"/>
                             <constraint firstItem="gQH-Fq-xUp" firstAttribute="top" secondItem="FHg-s4-h4E" secondAttribute="bottom" constant="8" id="lVL-gP-5Rb"/>
                             <constraint firstItem="T4K-o8-7fK" firstAttribute="top" secondItem="phg-1Z-Mc0" secondAttribute="bottom" constant="8" id="mrv-fx-JyW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="phg-1Z-Mc0" secondAttribute="bottom" constant="54" id="qvI-Dk-z44"/>
@@ -161,7 +161,7 @@
                         <outletCollection property="btOptions" destination="FHg-s4-h4E" collectionClass="NSMutableArray" id="wrP-3E-seM"/>
                         <outletCollection property="btOptions" destination="phg-1Z-Mc0" collectionClass="NSMutableArray" id="58W-Tj-qjk"/>
                         <outletCollection property="btOptions" destination="gQH-Fq-xUp" collectionClass="NSMutableArray" id="Oqt-uy-3It"/>
-                        <segue destination="qb0-xm-BBu" kind="show" identifier="gameoverSegue" id="ehO-fZ-l0U"/>
+                        <segue destination="qb0-xm-BBu" kind="show" identifier="gameOverSegue" id="ehO-fZ-l0U"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

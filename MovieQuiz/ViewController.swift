@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var timer: UIImageView!
     
     private var quizManager:QuizManager!
+    private var avAudioPlayer: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         quizManager = QuizManager()
         getNewQuiz()
+        startTimer()
     }
     
     private func getNewQuiz() {
@@ -33,6 +36,45 @@ class ViewController: UIViewController {
         for (index, element) in random.options.enumerated() {
             btOptions[index].setTitle(element.name, for: .normal)
         }
+        
+        play()
+    }
+    
+    private func startTimer() {
+        timer.frame = view.frame
+        UIView.animate(withDuration: 60.0, delay: 0.0, options: .curveLinear, animations: {
+            self.timer.frame.size.width = 0
+            self.timer.frame.origin.x = self.view.center.x
+        }) { (success) in
+            self.gameOver()
+        }
+    }
+    
+    private func gameOver() {
+        performSegue(withIdentifier: "gameOverSegue", sender: nil)
+        avAudioPlayer.stop()
+    }
+    
+    private func play() {
+        guard let round = quizManager.actualQuiz else { return }
+        
+        ivQuiz.image = UIImage(named: "movieSound")
+        
+        if let url = Bundle.main.url(forResource: "quote\(round.quiz.number)", withExtension: "mp3") {
+            
+            do {
+                avAudioPlayer = try AVAudioPlayer(contentsOf: url)
+                avAudioPlayer.volume = 1
+                avAudioPlayer.delegate = self
+                avAudioPlayer.play()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    @IBAction func playQuiz(_ sender: UIButton) {
+        play()
     }
     
     @IBAction func checkAnswer(_ sender: UIButton) {
@@ -51,6 +93,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func changeMusicTime(_ sender: Any) {
+    }
+}
+
+extension ViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        ivQuiz.image = UIImage(named: "movieSoundPause")
     }
 }
 
